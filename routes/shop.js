@@ -12,12 +12,12 @@ const adminData = require('./admin')
 //   console.log(adminData.product)
 //   res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 // });
-
+ debugger;
 
 router.get('/', (req, res, next) => {
 
-  const products = adminData.product
-  res.render('shop',{prods:products , DocumentTitle : 'shop '});
+  const products = adminData.product;
+  res.render('shop',{prods:products , DocumentTitle : 'shop' , path :'/'} );
 });
 
 
