@@ -14,14 +14,19 @@ const adminData = require('./admin')
 // });
  debugger;
 
+// router.get('/', (req, res, next) => {
+
+//   const products = adminData.product;
+//   res.render('shop',{prods:products , pageTitle: 'shop' , path :'/'} );
+// });
+
+
+
 router.get('/', (req, res, next) => {
 
   const products = adminData.product;
-  res.render('shop',{prods:products , pageTitle: 'shop' , path :'/'} );
+  res.render('shop',{prods:products , pageTitle: 'shop' , path :'/' , hadProdacts: products.length>0  }  );
 });
-
 
 module.exports = router;
 
-
-////////////// hi 
