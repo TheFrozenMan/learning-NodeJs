@@ -2,13 +2,13 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const expressHDS = require('express-handlebars')
+// const expressHDS = require('express-handlebars')
 const app = express();
 
-app.engine('handlebars' , expressHDS({layoutsDir: 'views/layouts/' , defaultLayout :'main-layout' , extname: 'handlebars'})) ;
-app.set('view engine','handlebars');
-
+// app.engine('handlebars' , expressHDS({layoutsDir: 'views/layouts/' , defaultLayout :'main-layout' , extname: 'handlebars'})) ;
+// app.set('view engine','handlebars');
 // app.set('view engine','pug');
+app.set('view engine','ejs');
 app.set('views' , 'views' )
 
 const adminData = require('./routes/admin');
