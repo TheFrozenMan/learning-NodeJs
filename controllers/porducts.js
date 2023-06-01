@@ -20,13 +20,15 @@ exports.postNewProduct = (req, res, next) => {
 
 
 exports.getProuducts = (req, res, next) => {
-  const products = Product.fatchAll();
-  res.render('shop', {
-    prods: products,
-    pageTitle: 'shop',
-    path: '/',
-    hadProdacts: products.length > 0,
-    shopActive: true,
-    productCSS: true,
+  const products = Product.fatchAll((products)=>{
+    res.render('shop', {
+      prods: products,
+      pageTitle: 'shop',
+      path: '/',
+      hadProdacts: products.length > 0,
+      shopActive: true,
+      productCSS: true,
+    });
   });
+ 
 };
