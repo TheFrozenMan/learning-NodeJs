@@ -32,3 +32,14 @@ exports.getProuducts = (req, res, next) => {
   });
  
 };
+
+
+
+exports.GetTheCart = (req , res , next)=> {
+  res.render(
+    'shop/cart' , {
+      pageTitle: 'Cart',
+      path: '/cart',
+    }
+  )
+}
