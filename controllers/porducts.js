@@ -18,7 +18,6 @@ exports.postNewProduct = (req, res, next) => {
 };
 
 
-
 exports.getProuducts = (req, res, next) => {
   const products = Product.fatchAll((products)=>{
     res.render('shop/product-list', {
@@ -34,12 +33,17 @@ exports.getProuducts = (req, res, next) => {
 };
 
 
-
-exports.GetTheCart = (req , res , next)=> {
+//  the controller that all the route to access to the cart 
+exports.getTheCart = (req , res , next)=> {
   res.render(
     'shop/cart' , {
       pageTitle: 'Cart',
       path: '/cart',
     }
   )
+}
+
+
+exports.getTheProductDeatiles = (req,res, next) =>{
+  res.render('shop/product-details',{pageTitle :' product Deatiales', path : '/product'})
 }
