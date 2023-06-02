@@ -47,3 +47,11 @@ exports.getTheCart = (req , res , next)=> {
 exports.getTheProductDeatiles = (req,res, next) =>{
   res.render('shop/product-details',{pageTitle :' product Deatiales', path : '/product'})
 }
+
+
+exports.getAdminProuctList = (req , res , next)=> {
+  res.render('admin/products' ,{ 
+    pageTitle : 'product-list' ,
+    path : '/admin/products'
+  })
+}
