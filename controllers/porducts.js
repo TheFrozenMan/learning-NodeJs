@@ -1,6 +1,6 @@
 const Product = require('../models/product') ;
 exports.getAddProduct = (req, res, next) => {
-  res.render('add-product',
+  res.render('admin/add-product',
     {
       pageTitle: 'add-product',
       path: '/admin/add-product',
@@ -21,7 +21,7 @@ exports.postNewProduct = (req, res, next) => {
 
 exports.getProuducts = (req, res, next) => {
   const products = Product.fatchAll((products)=>{
-    res.render('shop', {
+    res.render('shop/product-list', {
       prods: products,
       pageTitle: 'shop',
       path: '/',
