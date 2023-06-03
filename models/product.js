@@ -20,8 +20,11 @@ const getProductFormFile = cb =>{
     })
 }
 module.exports = class  Product {
-    constructor(titile) {
+    constructor(titile , imgeUrl ,description , price ) {
         this.titile = titile;
+        this.imgeUrl= imgeUrl ;
+        this.description =description ;
+        this.price = price ;
     }
 //
     save(){

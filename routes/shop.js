@@ -1,20 +1,20 @@
 const path = require('path');
 const express = require('express');
 const router = express.Router();
-const productsController  = require ('../controllers/porducts')
+const shopController  = require ('../controllers/shop')
 
 // routing for the mean page 
 // / => GET
-router.get('/', productsController.getProuducts);
+router.get('/', shopController.getProuducts);
 
 // routing for the cart  
 // /cart => GET
-router.get('/cart',productsController.getTheCart) ;
+router.get('/cart',shopController.getTheCart) ;
 
 
 // routig for the product
 // /cart => GET
-router.get('/product',productsController.getTheProductDeatiles)
+router.get('/product',shopController.getTheProductDeatiles)
 
 module.exports = router;
 
