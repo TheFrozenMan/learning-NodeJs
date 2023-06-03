@@ -24,9 +24,15 @@ exports.getAddProduct = (req, res, next) => {
 
 
   exports.getProducts = (req , res , next)=> {
-    res.render('admin/products' ,{ 
-      pageTitle : 'product-list' ,
-      path : '/admin/products'
-    })
+const product =  Product.fatchAll(product =>{
+  res.render('admin/products' ,{ 
+    prods: product,
+    pageTitle : 'product-list' ,
+    path : '/admin/products',
+    hadProdacts: product.length > 0,
+  })
+})
+
+   
   }
 
