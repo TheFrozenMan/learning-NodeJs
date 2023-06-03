@@ -12,6 +12,8 @@ router.get('/', shopController.getProuducts);
 router.get('/cart',shopController.getTheCart) ;
 
 
+router.get('/orders',shopController.getTheCart) ;
+
 // routig for the product
 // /cart => GET
 router.get('/product',shopController.getTheProductDeatiles)

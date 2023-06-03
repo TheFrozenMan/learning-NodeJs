@@ -44,6 +44,18 @@ exports.getTheCart = (req , res , next)=> {
 }
 
 
+
+//  the controller that all the route to access to the cart 
+exports.getTheOrders = (req , res , next)=> {
+  res.render(
+    'shop/orders' , {
+      pageTitle: 'your orders',
+      path: '/orders',
+    }
+  )
+}
+
+
 exports.getTheProductDeatiles = (req,res, next) =>{
   res.render('shop/product-details',
   {
@@ -51,3 +63,5 @@ exports.getTheProductDeatiles = (req,res, next) =>{
     path : '/product'
   })
 }
+
+
