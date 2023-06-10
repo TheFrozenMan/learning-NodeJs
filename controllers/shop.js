@@ -19,11 +19,17 @@ exports.getProuducts = (req, res, next) => {
     });
   });
  
-};
+}; 
+
+ exports.getProuduct = (req, res , next )=>{
+  const prodId= req.params.prouductId ;
+  console.log(prodId) ; 
+  res.redirect('/')
+ }
 
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll(products => {
+  Product.fatchAll(products => {
     res.render('shop/index', {
       prods: products,
       pageTitle: 'Shop',

@@ -11,13 +11,20 @@ router.get('/', shopController.getIndex);
 // /cart => GET
 router.get('/cart',shopController.getTheCart) ;
 
+
+// /checkout => GET
 router.get('/checkout', shopController.getCheckout);
 
+
+// /orders => GET
 router.get('/orders',shopController.getTheCart) ;
 
 // routig for the product
 // /cart => GET
-router.get('/product',shopController.getTheProductDeatiles)
+router.get('/product',shopController.getTheProductDeatiles) ; 
+
+
+router.get('/products/:prouductId',shopController.getProuduct) ; 
 
 module.exports = router;
 
