@@ -42,4 +42,12 @@ module.exports = class  Product {
     static fatchAll(cb){
         getProductFormFile(cb);
     }
+
+     static findById(id,cb){
+        getProductFormFile(proudcts=>{
+            const product = proudcts.find( p => p.id=== id ) ; 
+            cb(product)
+        }) ; 
+     }
+     
 }

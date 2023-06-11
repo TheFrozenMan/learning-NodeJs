@@ -7,7 +7,8 @@ exports.postNewProduct = (req, res, next) => {
 };
 
 
-exports.getProuducts = (req, res, next) => {
+
+exports.getProducts = (req, res, next) => {
   const products = Product.fatchAll((products)=>{
     res.render('shop/product-list', {
       prods: products,
@@ -22,8 +23,10 @@ exports.getProuducts = (req, res, next) => {
 }; 
 
  exports.getProuduct = (req, res , next )=>{
-  const prodId= req.params.prouductId ;
-  console.log(prodId) ; 
+  const prodId= req.params.productId ;
+  Product.findById( prodId , product  =>{
+    console.log(product)
+  })
   res.redirect('/')
  }
 

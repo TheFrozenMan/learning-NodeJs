@@ -24,7 +24,10 @@ router.get('/orders',shopController.getTheCart) ;
 router.get('/product',shopController.getTheProductDeatiles) ; 
 
 
-router.get('/products/:prouductId',shopController.getProuduct) ; 
+
+router.get('/products', shopController.getProducts);
+
+router.get('/products/:productId',shopController.getProuduct) ; 
 
 module.exports = router;
 
