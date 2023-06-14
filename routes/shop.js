@@ -8,6 +8,7 @@ const shopController  = require ('../controllers/shop')
 router.get('/', shopController.getIndex);
 
 // routing for the cart  
+router.post('/cart',shopController.postCart)
 // /cart => GET
 router.get('/cart',shopController.getTheCart) ;
 

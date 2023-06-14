@@ -56,6 +56,12 @@ exports.getTheCart = (req , res , next)=> {
 }
 
 
+exports.postCart = (req, res , next) => {
+  const prodId = req.body.productId ;
+  console.log(prodId) ;
+  res.redirect('/cart')
+}
+
 
 //  the controller that all the route to access to the cart 
 exports.getTheOrders = (req , res , next)=> {
