@@ -1,5 +1,5 @@
 const Product = require('../models/product') ;
-
+const Cart = require('../models/cart') ; 
 exports.postNewProduct = (req, res, next) => {
   const product = new Product(req.body.title);
   product.save();
@@ -59,6 +59,9 @@ exports.getTheCart = (req , res , next)=> {
 exports.postCart = (req, res , next) => {
   const prodId = req.body.productId ;
   console.log(prodId) ;
+  Product.findById(prodId ,product =>{
+      Cart.addToCart(prodId,product.price) ;   
+  })
   res.redirect('/cart')
 }
 
