@@ -10,10 +10,12 @@
 
 
             <main>
-                <form class="product-form" action="/admin/add-product" method="POST">
+                <form class="product-form" action="/admin/<% if(editing){%>add-product<%}else{%>edit-product<%} %>" method="POST">
                     <div class="form-control">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title">
+                        <label for="title">Title</label>  
+                        <input type="text" name="title" id="title" value="<% if(editing){%> <%= product.title%> <%}%>">
+
+
                     </div>
                     <div class="form-control">
                         <label for="imageUrl">image url </label>
@@ -29,7 +31,12 @@
                     </div>
 
 
-                    <button type="submit">Add Product</button>
+                    <button type="submit"> 
+                        
+                    
+                        <% if (editing) { %>Update Product<% } else { %>Add Product<% } %>
+                    
+                    </button>
                 </form>
             </main>
             <%- include('../includes/end.ejs') %>

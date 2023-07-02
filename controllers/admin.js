@@ -5,6 +5,7 @@ exports.getAddProduct = (req, res, next) => {
       {
         pageTitle: 'add-product',
         path: '/admin/add-product',
+        editing: false
       })
   };
 
@@ -18,35 +19,34 @@ exports.getAddProduct = (req, res, next) => {
     product.save();
     res.redirect('/');
   };
-
-
   
   exports.getEditProduct = (req, res, next) => {
-    const prodId = req.body.productId ;
-    const editMode = req.query.edit ;
-    if(editMode){
-    res.render('admin/edit-product',
-      {
-        pageTitle: 'add-product',
-        path: '/admin/edit-product',
-        editingProduct:editMode  
-      })}else{
-        redirect('/')
+    const editMode = req.query.edit;
+    if (!editMode) {
+      return res.redirect('/');
+    }
+    const prodId = req.params.productId;
+    Product.findById(prodId, product => {
+      if (!product) {
+        return res.redirect('/');
       }
+      res.render('admin/edit-product', {
+        pageTitle: 'Edit Product',
+        path: '/admin/edit-product',
+        editing: editMode,
+        product: product
+      });
+    });
   };
-
-
-
+  
   exports.getProducts = (req , res , next)=> {
-const product =  Product.fatchAll(product =>{
-  res.render('admin/products' ,{ 
-    prods: product,
-    pageTitle : 'product-list' ,
-    path : '/admin/products',
-    hadProdacts: product.length > 0,
-  })
-})
-
-   
+    const product =  Product.fatchAll(product =>{
+      res.render('admin/products' ,{ 
+        prods: product,
+        pageTitle : 'product-list' ,
+        path : '/admin/products',
+        hadProdacts: product.length > 0,
+      })
+    })
   }
 
