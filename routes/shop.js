@@ -1,34 +1,25 @@
 const path = require('path');
+
 const express = require('express');
+
+const shopController = require('../controllers/shop');
+
 const router = express.Router();
-const shopController  = require ('../controllers/shop')
 
-// routing for the mean page 
-// / => GET
 router.get('/', shopController.getIndex);
-
-// routing for the cart  
-router.post('/cart',shopController.postCart)
-// /cart => GET
-router.get('/cart',shopController.getTheCart) ;
-
-
-// /checkout => GET
-router.get('/checkout', shopController.getCheckout);
-
-
-// /orders => GET
-router.get('/orders',shopController.getTheCart) ;
-
-// routig for the product
-// /cart => GET
-router.get('/product',shopController.getTheProductDeatiles) ; 
-
-
 
 router.get('/products', shopController.getProducts);
 
-router.get('/products/:productId',shopController.getProuduct) ; 
+router.get('/products/:productId', shopController.getProduct);
+
+router.get('/cart', shopController.getCart);
+
+router.post('/cart', shopController.postCart);
+
+router.post('/cart-delete-item', shopController.postCartDeleteProduct);
+
+router.get('/orders', shopController.getOrders);
+
+router.get('/checkout', shopController.getCheckout);
 
 module.exports = router;
-
