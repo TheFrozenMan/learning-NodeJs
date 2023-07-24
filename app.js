@@ -2,11 +2,20 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
+//pool for the connection to the server pool 
+const db= require('./util/database') ; 
 const errorController = require('./controllers/error');
 
 const app = express();
 
+// db.execute('SELECT * FROM products').then( result =>{ 
+//     {console.log(result) ; }
+// }).catch(err=> {console.error(err) ;} ); 
+
+
+db.pool.execute('SELECT * FROM products').then( result =>{
+    console.log(result)
+}).catch( err=>{ console.error(err)})
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
