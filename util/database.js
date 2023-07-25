@@ -8,4 +8,4 @@
  })  ;
 
 
- exports.pool = pool.promise();
+ module.exports = pool.promise();

@@ -13,7 +13,7 @@ const app = express();
 // }).catch(err=> {console.error(err) ;} ); 
 
 
-db.pool.execute('SELECT * FROM products').then( result =>{
+db.execute('SELECT * FROM products').then( result =>{
     console.log(result)
 }).catch( err=>{ console.error(err)})
 app.set('view engine', 'ejs');
